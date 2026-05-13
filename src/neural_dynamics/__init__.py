@@ -5,6 +5,8 @@ from .hodgkin_huxley import (
     hh_rhs_parameterized,
     make_hh_rhs,
     hh_initial_state,
+    hh_solve_current_array,
+    hh_solve_constant,
     alpha_n, beta_n, alpha_m, beta_m, alpha_h, beta_h,
     n_inf, m_inf, h_inf, tau_n, tau_m, tau_h,
     HH_DEFAULT_PARAMS,

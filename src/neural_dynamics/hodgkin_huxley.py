@@ -150,3 +150,77 @@ def make_hh_rhs(I_ext_fn, params=HH_DEFAULT_PARAMS):
 def hh_initial_state(V0=-65.0):
     """Return initial state [V, n_inf, m_inf, h_inf] at given voltage."""
     return np.array([V0, n_inf(V0), m_inf(V0), h_inf(V0)])
+
+
+@nb.njit
+def _rk4_step_hh(t, y, I_ext, C_m, g_Na, g_K, g_L, E_Na, E_K, E_L, dt):
+    """Single RK4 step for HH with explicit current value."""
+    k1 = hh_rhs_parameterized(t, y, I_ext, C_m, g_Na, g_K, g_L, E_Na, E_K, E_L)
+    k2 = hh_rhs_parameterized(t + 0.5*dt, y + 0.5*dt*k1, I_ext, C_m, g_Na, g_K, g_L, E_Na, E_K, E_L)
+    k3 = hh_rhs_parameterized(t + 0.5*dt, y + 0.5*dt*k2, I_ext, C_m, g_Na, g_K, g_L, E_Na, E_K, E_L)
+    k4 = hh_rhs_parameterized(t + dt, y + dt*k3, I_ext, C_m, g_Na, g_K, g_L, E_Na, E_K, E_L)
+    return y + (dt / 6.0) * (k1 + 2.0*k2 + 2.0*k3 + k4)
+
+
+@nb.njit
+def hh_solve_current_array(I_ext_array, dt, C_m=1.0, g_Na=120.0, g_K=36.0, g_L=0.3, E_Na=50.0, E_K=-77.0, E_L=-54.4):
+    """Simulate HH model with an arbitrary current waveform.
+
+    Parameters
+    ----------
+    I_ext_array : np.ndarray
+        External current at each time step (µA/cm²). Length determines simulation duration.
+    dt : float
+        Time step (ms).
+
+    Returns
+    -------
+    t : np.ndarray, shape (n_steps,)
+    y : np.ndarray, shape (n_steps, 4) — columns are [V, n, m, h]
+    """
+    n_steps = len(I_ext_array)
+    t = np.empty(n_steps)
+    y = np.empty((n_steps, 4))
+
+    V0 = -65.0
+    y[0] = np.array([V0, n_inf(V0), m_inf(V0), h_inf(V0)])
+    t[0] = 0.0
+
+    for i in range(n_steps - 1):
+        t[i + 1] = t[i] + dt
+        y[i + 1] = _rk4_step_hh(t[i], y[i], I_ext_array[i], C_m, g_Na, g_K, g_L, E_Na, E_K, E_L, dt)
+
+    return t, y
+
+
+@nb.njit
+def hh_solve_constant(I_ext, t_end, dt, C_m=1.0, g_Na=120.0, g_K=36.0, g_L=0.3, E_Na=50.0, E_K=-77.0, E_L=-54.4):
+    """Simulate HH with constant injected current.
+
+    Parameters
+    ----------
+    I_ext : float
+        Constant current (µA/cm²).
+    t_end : float
+        Duration (ms).
+    dt : float
+        Time step (ms).
+
+    Returns
+    -------
+    t : np.ndarray
+    y : np.ndarray, shape (n_steps+1, 4)
+    """
+    n_steps = int(t_end / dt)
+    t = np.empty(n_steps + 1)
+    y = np.empty((n_steps + 1, 4))
+
+    V0 = -65.0
+    y[0] = np.array([V0, n_inf(V0), m_inf(V0), h_inf(V0)])
+    t[0] = 0.0
+
+    for i in range(n_steps):
+        t[i + 1] = t[i] + dt
+        y[i + 1] = _rk4_step_hh(t[i], y[i], I_ext, C_m, g_Na, g_K, g_L, E_Na, E_K, E_L, dt)
+
+    return t, y
