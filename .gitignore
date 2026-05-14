@@ -13,8 +13,6 @@ build/
 .venv/
 env/
 venv/
-figures/*.png
-figures/*.svg
 !figures/.gitkeep
 .superpowers/
 docs/superpowers/
