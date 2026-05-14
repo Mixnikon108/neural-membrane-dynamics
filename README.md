@@ -65,9 +65,9 @@ This tells us that the membrane potential can change only when current flows ont
 
 While the lipid bilayer is an excellent insulator, the cell membrane is studded with **ion channel proteins**: large transmembrane proteins that form aqueous pores through which specific ions can flow. The key channel types for the action potential are:
 
-- **Voltage-gated $	ext{Na}^+$ channels**: selectively permeable to sodium ions, open rapidly upon depolarization
-- **Voltage-gated $	ext{K}^+$ channels**: selectively permeable to potassium ions, open more slowly upon depolarization
-- **Leak channels**: always open, primarily permeable to $	ext{K}^+$ and $	ext{Cl}^-$, responsible for the resting potential
+- **Voltage-gated $\text{Na}^+$ channels**: selectively permeable to sodium ions, open rapidly upon depolarization
+- **Voltage-gated $\text{K}^+$ channels**: selectively permeable to potassium ions, open more slowly upon depolarization
+- **Leak channels**: always open, primarily permeable to $\text{K}^+$ and $\text{Cl}^-$, responsible for the resting potential
 
 Each population of ion channels can be characterized by a **conductance** $g_\text{ion}$ (the inverse of resistance), measured in units of $\text{mS/cm}^2$ (millisiemens per square centimeter of membrane). The conductance represents how easily ions can flow through the channels: high conductance means many channels are open, low conductance means few are open.
 
@@ -81,7 +81,7 @@ The critical insight that distinguishes the Hodgkin-Huxley model from simpler mo
 
 ## 2.3 The Nernst Equation (Full Derivation)
 
-Where does the reversal potential $E_\text{ion}$ come from? It arises from the fact that ion concentrations differ dramatically between the inside and outside of the cell. For example, $	ext{K}^+$ is roughly 20 times more concentrated inside the cell than outside, while $	ext{Na}^+$ is roughly 10 times more concentrated outside. These concentration gradients are maintained by metabolic pumps (primarily the $	ext{Na}^+$/$	ext{K}^+$-ATPase).
+Where does the reversal potential $E_\text{ion}$ come from? It arises from the fact that ion concentrations differ dramatically between the inside and outside of the cell. For example, $\text{K}^+$ is roughly 20 times more concentrated inside the cell than outside, while $\text{Na}^+$ is roughly 10 times more concentrated outside. These concentration gradients are maintained by metabolic pumps (primarily the $\text{Na}^+$/$\text{K}^+$-ATPase).
 
 When a channel selective for a particular ion opens, two forces act on that ion:
 
@@ -92,7 +92,7 @@ At equilibrium, these two forces balance exactly. Let us derive the voltage at w
 
 ### Derivation from Thermodynamic First Principles
 
-Consider a single ion species with valence $z$ (e.g., $z = +1$ for $	ext{Na}^+$ and $	ext{K}^+$, $z = -1$ for $	ext{Cl}^-$). The **electrochemical potential** of this ion on each side of the membrane has two contributions:
+Consider a single ion species with valence $z$ (e.g., $z = +1$ for $\text{Na}^+$ and $\text{K}^+$, $z = -1$ for $\text{Cl}^-$). The **electrochemical potential** of this ion on each side of the membrane has two contributions:
 
 $$\mu = \mu_\text{chemical} + \mu_\text{electrical}$$
 
@@ -130,11 +130,11 @@ At body temperature ($T = 310 \; \text{K}$) or squid axon temperature ($T \appro
 
 | Ion | $[\text{ion}]_\text{in}$ (mM) | $[\text{ion}]_\text{out}$ (mM) | $z$ | $E_\text{ion}$ (mV) |
 |-----|------|------|---|------|
-| $	ext{K}^+$ | 400 | 20 | +1 | $\approx -77$ |
-| $	ext{Na}^+$ | 50 | 440 | +1 | $\approx +50$ |
-| $	ext{Cl}^-$ | 40 | 560 | $-1$ | $\approx -66$ |
+| $\text{K}^+$ | 400 | 20 | +1 | $\approx -77$ |
+| $\text{Na}^+$ | 50 | 440 | +1 | $\approx +50$ |
+| $\text{Cl}^-$ | 40 | 560 | $-1$ | $\approx -66$ |
 
-The large difference between $E_\text{Na} \approx +50 \; \text{mV}$ and $E_\text{K} \approx -77 \; \text{mV}$ is what makes the action potential possible: the membrane can swing between these two "battery" voltages by selectively opening $	ext{Na}^+$ or $	ext{K}^+$ channels.
+The large difference between $E_\text{Na} \approx +50 \; \text{mV}$ and $E_\text{K} \approx -77 \; \text{mV}$ is what makes the action potential possible: the membrane can swing between these two "battery" voltages by selectively opening $\text{Na}^+$ or $\text{K}^+$ channels.
 
 <p align="center">
   <img src="figures/fig01_nernst_equation.png" width="700" alt="Nernst equilibrium potential as a function of concentration ratio for different ion valences.">
@@ -143,19 +143,19 @@ The large difference between $E_\text{Na} \approx +50 \; \text{mV}$ and $E_\text
 
 ## 2.4 The Goldman-Hodgkin-Katz Equation
 
-The Nernst equation gives the equilibrium potential for a single ion species. But at rest, the membrane is permeable to **multiple ion species simultaneously**: primarily $	ext{K}^+$, $	ext{Na}^+$, and $	ext{Cl}^-$. The resting membrane potential is therefore not equal to any single Nernst potential, but rather a weighted average that depends on the **relative permeabilities** of the membrane to each ion.
+The Nernst equation gives the equilibrium potential for a single ion species. But at rest, the membrane is permeable to **multiple ion species simultaneously**: primarily $\text{K}^+$, $\text{Na}^+$, and $\text{Cl}^-$. The resting membrane potential is therefore not equal to any single Nernst potential, but rather a weighted average that depends on the **relative permeabilities** of the membrane to each ion.
 
-The **Goldman-Hodgkin-Katz (GHK) voltage equation** generalizes the Nernst equation to multiple ions. It is derived from the Nernst-Planck equation for electrodiffusion under the assumption of a constant electric field across the membrane (the "constant field" approximation). For $	ext{Na}^+$, $	ext{K}^+$, and $	ext{Cl}^-$:
+The **Goldman-Hodgkin-Katz (GHK) voltage equation** generalizes the Nernst equation to multiple ions. It is derived from the Nernst-Planck equation for electrodiffusion under the assumption of a constant electric field across the membrane (the "constant field" approximation). For $\text{Na}^+$, $\text{K}^+$, and $\text{Cl}^-$:
 
 $$\boxed{V_m = \frac{RT}{F} \ln \frac{P_\text{K}[\text{K}^+]_\text{out} + P_\text{Na}[\text{Na}^+]_\text{out} + P_\text{Cl}[\text{Cl}^-]_\text{in}}{P_\text{K}[\text{K}^+]_\text{in} + P_\text{Na}[\text{Na}^+]_\text{in} + P_\text{Cl}[\text{Cl}^-]_\text{out}}}$$
 
-where $P_\text{K}$, $P_\text{Na}$, $P_\text{Cl}$ are the membrane permeabilities to each ion. Note that chloride concentrations are "flipped" (inside in numerator, outside in denominator) because $	ext{Cl}^-$ has negative valence.
+where $P_\text{K}$, $P_\text{Na}$, $P_\text{Cl}$ are the membrane permeabilities to each ion. Note that chloride concentrations are "flipped" (inside in numerator, outside in denominator) because $\text{Cl}^-$ has negative valence.
 
-At rest, the squid axon membrane is much more permeable to $	ext{K}^+$ than to $	ext{Na}^+$, with typical permeability ratios $P_\text{K} : P_\text{Na} : P_\text{Cl} \approx 1 : 0.04 : 0.45$. Substituting the squid axon concentrations:
+At rest, the squid axon membrane is much more permeable to $\text{K}^+$ than to $\text{Na}^+$, with typical permeability ratios $P_\text{K} : P_\text{Na} : P_\text{Cl} \approx 1 : 0.04 : 0.45$. Substituting the squid axon concentrations:
 
 $$V_\text{rest} \approx -65 \; \text{mV}$$
 
-This value is close to $E_\text{K}$ (since $	ext{K}^+$ permeability dominates at rest) but is pulled slightly positive by the small $	ext{Na}^+$ permeability. During an action potential, when $	ext{Na}^+$ channels open and $P_\text{Na}$ increases dramatically, the GHK equation predicts that $V_m$ will swing toward $E_\text{Na} \approx +50 \; \text{mV}$.
+This value is close to $E_\text{K}$ (since $\text{K}^+$ permeability dominates at rest) but is pulled slightly positive by the small $\text{Na}^+$ permeability. During an action potential, when $\text{Na}^+$ channels open and $P_\text{Na}$ increases dramatically, the GHK equation predicts that $V_m$ will swing toward $E_\text{Na} \approx +50 \; \text{mV}$.
 
 ## 2.5 The Equivalent Circuit
 
@@ -197,8 +197,8 @@ In Section 2 we established that the membrane potential obeys $C_m \, dV/dt = -\
 
 Hodgkin and Huxley's voltage clamp experiments revealed a crucial fact: **the membrane conductances are not constant.** When the membrane is depolarized (voltage stepped to a more positive value):
 
-- The **$	ext{Na}^+$ conductance** rises rapidly to a peak and then decays back toward zero, even though the voltage is held constant. This transient behavior reflects two distinct processes: fast **activation** (opening) followed by slower **inactivation** (a conformational change that blocks the open channel).
-- The **$	ext{K}^+$ conductance** rises more slowly to a sustained plateau and remains elevated as long as the depolarization is maintained. $	ext{K}^+$ channels activate but do not inactivate on the timescale of the action potential.
+- The **$\text{Na}^+$ conductance** rises rapidly to a peak and then decays back toward zero, even though the voltage is held constant. This transient behavior reflects two distinct processes: fast **activation** (opening) followed by slower **inactivation** (a conformational change that blocks the open channel).
+- The **$\text{K}^+$ conductance** rises more slowly to a sustained plateau and remains elevated as long as the depolarization is maintained. $\text{K}^+$ channels activate but do not inactivate on the timescale of the action potential.
 
 These are the experimental signatures that the model must capture. The conductances are functions of both voltage (because the rate of opening/closing depends on $V_m$) and time (because the channels take time to respond to voltage changes).
 
@@ -206,28 +206,28 @@ These are the experimental signatures that the model must capture. The conductan
 
 Hodgkin and Huxley's key insight was to decompose each conductance into the product of a **maximum conductance** $\bar{g}$ (when all channels are open) and one or more **gating variables** that represent the fraction of channels in the open state. Each gating variable takes values between 0 (all gates closed) and 1 (all gates open).
 
-### The $	ext{K}^+$ Channel: Four Identical Gates ($n^4$)
+### The $\text{K}^+$ Channel: Four Identical Gates ($n^4$)
 
-The $	ext{K}^+$ conductance rises sigmoidally upon depolarization, not exponentially. Hodgkin and Huxley found that the time course of $	ext{K}^+$ activation could be well described by the **fourth power** of a single gating variable $n$:
+The $\text{K}^+$ conductance rises sigmoidally upon depolarization, not exponentially. Hodgkin and Huxley found that the time course of $\text{K}^+$ activation could be well described by the **fourth power** of a single gating variable $n$:
 
 $$\boxed{g_\text{K}(t) = \bar{g}_\text{K} \cdot n(t)^4}$$
 
-Why $n^4$? The physical picture is that the $	ext{K}^+$ channel has **four identical, independent subunits** (gates), each of which must be in the "open" configuration for the channel to conduct. If each gate has probability $n$ of being open (independently), then the probability that all four are open simultaneously is $n^4$. This explains the sigmoidal rise: at early times, $n$ is increasing from a small value, and $n^4$ increases even more steeply. We now know from molecular biology that voltage-gated $	ext{K}^+$ channels are indeed tetramers (four identical $\alpha$-subunits arranged around a central pore) a remarkable confirmation of HH's purely mathematical deduction.
+Why $n^4$? The physical picture is that the $\text{K}^+$ channel has **four identical, independent subunits** (gates), each of which must be in the "open" configuration for the channel to conduct. If each gate has probability $n$ of being open (independently), then the probability that all four are open simultaneously is $n^4$. This explains the sigmoidal rise: at early times, $n$ is increasing from a small value, and $n^4$ increases even more steeply. We now know from molecular biology that voltage-gated $\text{K}^+$ channels are indeed tetramers (four identical $\alpha$-subunits arranged around a central pore) a remarkable confirmation of HH's purely mathematical deduction.
 
-### The $	ext{Na}^+$ Channel: Three Activation Gates and One Inactivation Gate ($m^3 h$)
+### The $\text{Na}^+$ Channel: Three Activation Gates and One Inactivation Gate ($m^3 h$)
 
-The $	ext{Na}^+$ conductance has a more complex time course: it rises rapidly (activation) and then decays (inactivation), even at constant voltage. Hodgkin and Huxley modeled this by introducing **two types of gates**:
+The $\text{Na}^+$ conductance has a more complex time course: it rises rapidly (activation) and then decays (inactivation), even at constant voltage. Hodgkin and Huxley modeled this by introducing **two types of gates**:
 
-- **$m$**: an activation gate. Three identical $m$-gates must be open for the channel to conduct (similar logic to $n$ for $	ext{K}^+$).
+- **$m$**: an activation gate. Three identical $m$-gates must be open for the channel to conduct (similar logic to $n$ for $\text{K}^+$).
 - **$h$**: an inactivation gate. This single gate must also be open. Unlike $m$, the $h$-gate is open at rest and *closes* upon depolarization.
 
-The $	ext{Na}^+$ conductance is therefore:
+The $\text{Na}^+$ conductance is therefore:
 
 $$\boxed{g_\text{Na}(t) = \bar{g}_\text{Na} \cdot m(t)^3 \cdot h(t)}$$
 
 Why $m^3 h$? The $m^3$ factor produces a rapid, sigmoidal rise in conductance (since $m$ activates quickly upon depolarization). The $h$ factor produces a slower decay (since $h$ decreases upon depolarization, eventually shutting off the channel). The product $m^3 h$ thus naturally produces a transient conductance that rises fast and falls slowly: exactly as observed experimentally.
 
-Molecularly, we now know that $	ext{Na}^+$ channels are single large proteins with four homologous domains (I-IV). Three of these contribute to activation (analogous to the three $m$-gates), while a cytoplasmic loop between domains III and IV acts as the "inactivation ball" that plugs the open channel (analogous to the $h$-gate).
+Molecularly, we now know that $\text{Na}^+$ channels are single large proteins with four homologous domains (I-IV). Three of these contribute to activation (analogous to the three $m$-gates), while a cytoplasmic loop between domains III and IV acts as the "inactivation ball" that plugs the open channel (analogous to the $h$-gate).
 
 ## 3.3 First-Order Kinetics
 
@@ -266,15 +266,15 @@ where $x_0 = x(0)$ is the initial value. This exponential relaxation is the sign
 
 Hodgkin and Huxley determined the rate functions $\alpha_x(V)$ and $\beta_x(V)$ by fitting empirical expressions to their voltage clamp data. The original paper used a shifted voltage variable $v = V - V_\text{rest}$, but we present the equations in the **modern convention** where $V$ is the absolute membrane potential (rest $\approx -65 \; \text{mV}$):
 
-### $	ext{K}^+$ activation ($n$)
+### $\text{K}^+$ activation ($n$)
 
 $$\alpha_n(V) = \frac{0.01 \, (V + 55)}{1 - \exp\!\big(-(V+55)/10\big)} \qquad \beta_n(V) = 0.125 \, \exp\!\big(-(V+65)/80\big)$$
 
-### $	ext{Na}^+$ activation ($m$)
+### $\text{Na}^+$ activation ($m$)
 
 $$\alpha_m(V) = \frac{0.1 \, (V + 40)}{1 - \exp\!\big(-(V+40)/10\big)} \qquad \beta_m(V) = 4 \, \exp\!\big(-(V+65)/18\big)$$
 
-### $	ext{Na}^+$ inactivation ($h$)
+### $\text{Na}^+$ inactivation ($h$)
 
 $$\alpha_h(V) = 0.07 \, \exp\!\big(-(V+65)/20\big) \qquad \beta_h(V) = \frac{1}{1 + \exp\!\big(-(V+35)/10\big)}$$
 
@@ -321,14 +321,14 @@ The following are the **original parameters** from Hodgkin and Huxley (1952), me
 | Parameter | Symbol | Value | Units |
 |-----------|--------|-------|-------|
 | Membrane capacitance | $C_m$ | 1.0 | $\mu\text{F/cm}^2$ |
-| Max $	ext{Na}^+$ conductance | $\bar{g}_\text{Na}$ | 120.0 | $\text{mS/cm}^2$ |
-| Max $	ext{K}^+$ conductance | $\bar{g}_\text{K}$ | 36.0 | $\text{mS/cm}^2$ |
+| Max $\text{Na}^+$ conductance | $\bar{g}_\text{Na}$ | 120.0 | $\text{mS/cm}^2$ |
+| Max $\text{K}^+$ conductance | $\bar{g}_\text{K}$ | 36.0 | $\text{mS/cm}^2$ |
 | Leak conductance | $g_L$ | 0.3 | $\text{mS/cm}^2$ |
-| $	ext{Na}^+$ reversal potential | $E_\text{Na}$ | +50.0 | mV |
-| $	ext{K}^+$ reversal potential | $E_\text{K}$ | $-77.0$ | mV |
+| $\text{Na}^+$ reversal potential | $E_\text{Na}$ | +50.0 | mV |
+| $\text{K}^+$ reversal potential | $E_\text{K}$ | $-77.0$ | mV |
 | Leak reversal potential | $E_L$ | $-54.4$ | mV |
 
-Note the striking asymmetry: $\bar{g}_\text{Na}$ is more than three times larger than $\bar{g}_\text{K}$, which in turn is 120 times larger than $g_L$. When the $	ext{Na}^+$ channels open fully, they can drive an enormous inward current that rapidly depolarizes the membrane.
+Note the striking asymmetry: $\bar{g}_\text{Na}$ is more than three times larger than $\bar{g}_\text{K}$, which in turn is 120 times larger than $g_L$. When the $\text{Na}^+$ channels open fully, they can drive an enormous inward current that rapidly depolarizes the membrane.
 
 These seven parameters, together with the six rate functions defined in Section 3.4, completely specify the model. In the next sections, we will simulate this system numerically and explore its remarkably rich dynamical behavior.
 
@@ -342,7 +342,7 @@ Why can’t we simply write down an analytical solution? The answer lies in the 
 
 We therefore need **numerical integration**: we approximate the continuous ODEs by stepping forward in discrete time increments $\Delta t$, computing the state at each step from the state at the previous step. The art of numerical methods lies in choosing schemes that are accurate (small error per step), stable (errors don’t grow catastrophically), and efficient (few function evaluations per step).
 
-A particular challenge for the HH system is **stiffness**. The fast $	ext{Na}^+$ activation variable $m$ has a time constant as small as $\tau_m \approx 0.05 \; \text{ms}$ near the spike peak, while the slow $	ext{K}^+$ activation $n$ has $\tau_n \approx 5 \; \text{ms}$; a ratio of 100:1. This disparity in timescales means that explicit methods must use time steps small enough to resolve the fastest dynamics, even during periods when only the slow dynamics are active. We will see how this affects the choice of method and step size.
+A particular challenge for the HH system is **stiffness**. The fast $\text{Na}^+$ activation variable $m$ has a time constant as small as $\tau_m \approx 0.05 \; \text{ms}$ near the spike peak, while the slow $\text{K}^+$ activation $n$ has $\tau_n \approx 5 \; \text{ms}$; a ratio of 100:1. This disparity in timescales means that explicit methods must use time steps small enough to resolve the fastest dynamics, even during periods when only the slow dynamics are active. We will see how this affects the choice of method and step size.
 
 ## 4.1 The Euler Method
 
@@ -368,7 +368,7 @@ The Euler method is therefore a **first-order method**: halving the step size ha
 
 ### Stability Considerations
 
-For the HH system, the Euler method requires $\Delta t \lesssim 0.01 \; \text{ms}$ to maintain stability, primarily because of the fast $	ext{Na}^+$ activation dynamics. With a time constant $\tau_m \approx 0.05 \; \text{ms}$, the stability condition $\Delta t < 2\tau_m$ gives $\Delta t < 0.1 \; \text{ms}$, and in practice a safety margin is needed. This is acceptable for short simulations but becomes expensive for long runs.
+For the HH system, the Euler method requires $\Delta t \lesssim 0.01 \; \text{ms}$ to maintain stability, primarily because of the fast $\text{Na}^+$ activation dynamics. With a time constant $\tau_m \approx 0.05 \; \text{ms}$, the stability condition $\Delta t < 2\tau_m$ gives $\Delta t < 0.1 \; \text{ms}$, and in practice a safety margin is needed. This is acceptable for short simulations but becomes expensive for long runs.
 
 ## 4.2 The 4th-Order Runge-Kutta Method (RK4)
 
@@ -435,9 +435,9 @@ Before exploring the model’s dynamics, we must first verify that our numerical
 We inject a **step current pulse** of $10 \; \mu\text{A/cm}^2$ for 1 ms into a resting membrane. If our implementation is correct, we should observe:
 
 1. A rapid **depolarization** from the resting potential ($\approx -65 \; \text{mV}$) to a peak near $+40 \; \text{mV}$
-2. A swift **repolarization** driven by $	ext{K}^+$ channel opening and $	ext{Na}^+$ channel inactivation
-3. An **undershoot** (hyperpolarization) below the resting potential, caused by the lingering $	ext{K}^+$ conductance
-4. A slow return to rest as the $	ext{K}^+$ channels close
+2. A swift **repolarization** driven by $\text{K}^+$ channel opening and $\text{Na}^+$ channel inactivation
+3. An **undershoot** (hyperpolarization) below the resting potential, caused by the lingering $\text{K}^+$ conductance
+4. A slow return to rest as the $\text{K}^+$ channels close
 
 <p align="center">
   <img src="figures/fig05_single_action_potential.png" width="700" alt="Single action potential evoked by a 1 ms current pulse, reproducing the classic HH waveform.">
@@ -453,14 +453,14 @@ We inject a **step current pulse** of $10 \; \mu\text{A/cm}^2$ for 1 ms into a r
 
 - **Peak amplitude** $\approx +40 \; \text{mV}$, approaching $E_\text{Na} = +50 \; \text{mV}$
 - **Spike duration** $\approx 1.5 \; \text{ms}$ (measured at half-maximum amplitude)
-- **Undershoot** to $\approx -80 \; \text{mV}$, transiently exceeding $E_\text{K} = -77 \; \text{mV}$ due to the slow deactivation of $	ext{K}^+$ channels
-- **Temporal ordering** of gating variables: $m$ rises first (fast $	ext{Na}^+$ activation), then $h$ falls ($	ext{Na}^+$ inactivation) and $n$ rises ($	ext{K}^+$ activation)
+- **Undershoot** to $\approx -80 \; \text{mV}$, transiently exceeding $E_\text{K} = -77 \; \text{mV}$ due to the slow deactivation of $\text{K}^+$ channels
+- **Temporal ordering** of gating variables: $m$ rises first (fast $\text{Na}^+$ activation), then $h$ falls ($\text{Na}^+$ inactivation) and $n$ rises ($\text{K}^+$ activation)
 
 The gating variable dynamics reveal the **biophysical mechanism** of the action potential:
 1. The stimulus depolarizes the membrane past threshold
-2. $m$ gates open rapidly $\rightarrow$ $	ext{Na}^+$ influx $\rightarrow$ positive feedback (more depolarization $\rightarrow$ more $m$ opening)
-3. $h$ gates close (slower) $\rightarrow$ $	ext{Na}^+$ channels inactivate, terminating the inward current
-4. $n$ gates open (slow) $\rightarrow$ $	ext{K}^+$ efflux $\rightarrow$ repolarization and undershoot
+2. $m$ gates open rapidly $\rightarrow$ $\text{Na}^+$ influx $\rightarrow$ positive feedback (more depolarization $\rightarrow$ more $m$ opening)
+3. $h$ gates close (slower) $\rightarrow$ $\text{Na}^+$ channels inactivate, terminating the inward current
+4. $n$ gates open (slow) $\rightarrow$ $\text{K}^+$ efflux $\rightarrow$ repolarization and undershoot
 5. $n$ gates slowly close, $h$ gates slowly recover $\rightarrow$ return to rest
 
 ---
@@ -482,7 +482,7 @@ The action potential is not a single event but a sequence of **distinct biophysi
 
 One of the most striking features of the action potential is its **all-or-none** character. A stimulus that is too weak produces only a small, passive depolarization that decays back to rest. But once the stimulus exceeds a critical **threshold**, the full action potential is triggered with the same amplitude regardless of how far above threshold the stimulus is.
 
-This threshold arises from the positive feedback loop in $	ext{Na}^+$ activation: depolarization opens $	ext{Na}^+$ channels $\rightarrow$ $	ext{Na}^+$ influx $\rightarrow$ further depolarization. Below threshold, the outward leak and $	ext{K}^+$ currents are strong enough to counteract the $	ext{Na}^+$ current and pull the membrane back to rest. Above threshold, the $	ext{Na}^+$ current wins, and the regenerative cycle drives the membrane to the peak of the spike.
+This threshold arises from the positive feedback loop in $\text{Na}^+$ activation: depolarization opens $\text{Na}^+$ channels $\rightarrow$ $\text{Na}^+$ influx $\rightarrow$ further depolarization. Below threshold, the outward leak and $\text{K}^+$ currents are strong enough to counteract the $\text{Na}^+$ current and pull the membrane back to rest. Above threshold, the $\text{Na}^+$ current wins, and the regenerative cycle drives the membrane to the peak of the spike.
 
 Let us visualize this by injecting current pulses of increasing amplitude.
 
@@ -495,9 +495,9 @@ Let us visualize this by injecting current pulses of increasing amplitude.
 
 Immediately after an action potential, the neuron enters a **refractory period** during which it is either impossible or difficult to elicit a second spike. There are two phases:
 
-- **Absolute refractory period** ($\sim 1\text{-}2 \; \text{ms}$): No stimulus, no matter how strong, can trigger another spike. This is because the $	ext{Na}^+$ inactivation gate $h$ is near zero; the channels are physically blocked, and cannot be opened until $h$ recovers.
+- **Absolute refractory period** ($\sim 1\text{-}2 \; \text{ms}$): No stimulus, no matter how strong, can trigger another spike. This is because the $\text{Na}^+$ inactivation gate $h$ is near zero; the channels are physically blocked, and cannot be opened until $h$ recovers.
 
-- **Relative refractory period** ($\sim 3\text{-}5 \; \text{ms}$): A second spike *can* be triggered, but only by a **stronger-than-normal** stimulus. During this period, $h$ is partially recovered but $n$ is still elevated ($	ext{K}^+$ channels are still partly open), so the threshold is effectively raised.
+- **Relative refractory period** ($\sim 3\text{-}5 \; \text{ms}$): A second spike *can* be triggered, but only by a **stronger-than-normal** stimulus. During this period, $h$ is partially recovered but $n$ is still elevated ($\text{K}^+$ channels are still partly open), so the threshold is effectively raised.
 
 We can demonstrate this with a **paired-pulse protocol**: deliver a first stimulus to trigger a spike, then deliver a second identical stimulus at varying delays.
 
@@ -530,9 +530,9 @@ One of the most counterintuitive predictions of the Hodgkin-Huxley model is **an
 
 The mechanism is elegantly simple when understood through the gating variables:
 
-1. **During hyperpolarization**: The membrane is held below rest. At these negative voltages, the $	ext{Na}^+$ inactivation gate $h$ has a *higher* steady-state value than at rest (recall from Section 3 that $h_\infty$ increases at negative voltages). So $h$ gradually increases. $	ext{Na}^+$ channels are being **de-inactivated**, priming them to open.
+1. **During hyperpolarization**: The membrane is held below rest. At these negative voltages, the $\text{Na}^+$ inactivation gate $h$ has a *higher* steady-state value than at rest (recall from Section 3 that $h_\infty$ increases at negative voltages). So $h$ gradually increases. $\text{Na}^+$ channels are being **de-inactivated**, priming them to open.
 
-2. **Upon release**: When the hyperpolarizing current is removed, the membrane begins to return toward rest. But now $h$ is *larger than its resting value*: more $	ext{Na}^+$ channels are available to open. As $V$ rises past threshold (even passively, driven by the leak current), the enhanced $	ext{Na}^+$ availability triggers the positive feedback loop: $m$ gates open $\rightarrow$ $	ext{Na}^+$ influx $\rightarrow$ depolarization $\rightarrow$ more $m$ gates open.
+2. **Upon release**: When the hyperpolarizing current is removed, the membrane begins to return toward rest. But now $h$ is *larger than its resting value*: more $\text{Na}^+$ channels are available to open. As $V$ rises past threshold (even passively, driven by the leak current), the enhanced $\text{Na}^+$ availability triggers the positive feedback loop: $m$ gates open $\rightarrow$ $\text{Na}^+$ influx $\rightarrow$ depolarization $\rightarrow$ more $m$ gates open.
 
 3. **Result**: A full action potential fires, triggered not by a depolarizing stimulus but by the *removal* of a hyperpolarizing one.
 
@@ -837,15 +837,15 @@ Let us simulate the LIF model using the `lif_simulate` function from our package
 
 The simplification from HH to LIF comes at a significant cost in biophysical detail:
 
-1. **No spike shape.** In HH, the action potential waveform (rapid depolarization, overshoot to +40 mV, repolarization, undershoot to -80 mV) emerges from the interplay of $	ext{Na}^+$ and $	ext{K}^+$ currents. In LIF, the spike is a dimensionless point event; the voltage jumps discontinuously from $V_\text{th}$ to $V_\text{reset}$.
+1. **No spike shape.** In HH, the action potential waveform (rapid depolarization, overshoot to +40 mV, repolarization, undershoot to -80 mV) emerges from the interplay of $\text{Na}^+$ and $\text{K}^+$ currents. In LIF, the spike is a dimensionless point event; the voltage jumps discontinuously from $V_\text{th}$ to $V_\text{reset}$.
 
-2. **No $	ext{Na}^+$ dynamics or inactivation.** The rapid activation and subsequent inactivation of sodium channels (the mechanism that terminates the action potential) is entirely absent. There is no gating variable $m$ or $h$.
+2. **No $\text{Na}^+$ dynamics or inactivation.** The rapid activation and subsequent inactivation of sodium channels (the mechanism that terminates the action potential) is entirely absent. There is no gating variable $m$ or $h$.
 
-3. **No natural refractory period.** In HH, the refractory period arises naturally from $	ext{Na}^+$ channel inactivation ($h \to 0$) and $	ext{K}^+$ channel activation ($n \to 1$). In LIF, refractoriness must be imposed artificially as a hard-coded time window.
+3. **No natural refractory period.** In HH, the refractory period arises naturally from $\text{Na}^+$ channel inactivation ($h \to 0$) and $\text{K}^+$ channel activation ($n \to 1$). In LIF, refractoriness must be imposed artificially as a hard-coded time window.
 
 4. **No subthreshold nonlinearities.** The HH model exhibits rich subthreshold dynamics: resonance, subthreshold oscillations, and a voltage-dependent effective time constant. The LIF subthreshold dynamics are purely linear.
 
-5. **No anode break excitation.** The post-inhibitory rebound spike we observed in the HH model (Section 5.5) relies on the differential recovery rates of $	ext{Na}^+$ and $	ext{K}^+$ channels. LIF cannot exhibit this phenomenon.
+5. **No anode break excitation.** The post-inhibitory rebound spike we observed in the HH model (Section 5.5) relies on the differential recovery rates of $\text{Na}^+$ and $\text{K}^+$ channels. LIF cannot exhibit this phenomenon.
 
 Despite these limitations, the LIF model captures the essential feature of neural spiking (**threshold-triggered discrete events**) and does so with remarkable efficiency. In the next section, we quantify exactly how the two models compare.
 
@@ -875,7 +875,7 @@ A single spike reveals the most striking qualitative difference between the two 
 
 ## 9.3 Refractory Period Comparison
 
-In the HH model, the refractory period emerges naturally from the slow recovery of $	ext{Na}^+$ inactivation ($h$) and the slow deactivation of $	ext{K}^+$ channels ($n$). The recovery is **continuous**: at short interpulse intervals, the second spike is smaller and slower; at longer intervals, it gradually recovers to full amplitude.
+In the HH model, the refractory period emerges naturally from the slow recovery of $\text{Na}^+$ inactivation ($h$) and the slow deactivation of $\text{K}^+$ channels ($n$). The recovery is **continuous**: at short interpulse intervals, the second spike is smaller and slower; at longer intervals, it gradually recovers to full amplitude.
 
 In the LIF model, the refractory period is a **binary switch**: during $t_\text{ref}$, the neuron is completely unable to fire; after $t_\text{ref}$, it fires with exactly the same characteristics as before.
 
@@ -924,7 +924,7 @@ This notebook has traced a path from the **biophysics of ion channels** to the *
 
 1. **The neuron is an electrical circuit with voltage-dependent conductances.** The lipid bilayer acts as a capacitor, ion channels as variable resistors, and concentration gradients as batteries. This equivalent circuit naturally gives rise to the membrane equation $C_m \, dV/dt = -\sum I_\text{ion} + I_\text{ext}$.
 
-2. **The HH model captures spike generation through four coupled nonlinear ODEs.** The four state variables $(V, n, m, h)$ describe the membrane potential and the three gating variables governing $	ext{Na}^+$ and $	ext{K}^+$ channel kinetics. Despite its apparent simplicity (four equations, seven parameters), this system reproduces the full richness of neural excitability: threshold behavior, all-or-nothing spikes, refractory periods, repetitive firing, and anode break excitation.
+2. **The HH model captures spike generation through four coupled nonlinear ODEs.** The four state variables $(V, n, m, h)$ describe the membrane potential and the three gating variables governing $\text{Na}^+$ and $\text{K}^+$ channel kinetics. Despite its apparent simplicity (four equations, seven parameters), this system reproduces the full richness of neural excitability: threshold behavior, all-or-nothing spikes, refractory periods, repetitive firing, and anode break excitation.
 
 3. **Phase plane analysis reveals the topological structure of excitability.** By exploiting timescale separation, we reduced the 4D system to a 2D phase portrait in the $(V, n)$ plane. The N-shaped $V$-nullcline and sigmoid $n$-nullcline organize the dynamics: their intersection determines the fixed point, and the shape of the nullclines explains the existence of threshold behavior and all-or-nothing responses.
 
